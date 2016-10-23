@@ -1,0 +1,2 @@
+secret_key : yzBuj6bzk6QkBhXusMUATcv5
+client_id: 1082447311253-2t09u3ln883qma3kti6l0quf5v5ma1g5.apps.googleusercontent.com

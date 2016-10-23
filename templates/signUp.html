@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <title>Python Flask Bucket List App</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="../static/js/signUp.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" ><a href="/">Inicio</a></li>
+            <li role="presentation"><a href="/showSignin">Incia Sesión</a></li>
+            <li role="presentation" class="active"><a href="/showSignUp">Regístrate</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">La Porra ITQ</h3>
+      </div>
+
+      <div class="jumbotron" id="signUpJumbotron">
+        <h1>Registro</h1>
+        <form class="form-signin">
+          <div class="form-group" id="formgroupName">
+            <label for="inputName" class="sr-only">Nombre</label>
+            <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Nombre" required autofocus>
+          </div>
+          <div class="form-group" id="formgroupSurname">
+            <label for="inputSurname" class="sr-only">Apellidos</label>
+            <input type="name" name="inputSurname" id="inputSurname" class="form-control" placeholder="Apellidos" required autofocus>
+          </div>
+          <div class="form-group" id="formgroupEmail">
+            <label for="inputEmail" class="sr-only">Correo</label>
+            <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Correo" required autofocus>
+          </div>
+          <div class="form-group" id="formgroupPassword">
+            <label for="inputPassword" class="sr-only">Contraseña</label>
+            <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+          </div>
+          <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Regístrate</button>
+      </form>
+      </div>
+
+
+
+      <footer class="footer">
+        <p>&copy; Diana Sanabria Nieto</p>
+      </footer>
+
+    </div>
+  </body>
+</html>

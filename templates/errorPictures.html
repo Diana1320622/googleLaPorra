@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Python Flask Bucket List App</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/bootstrap.fd.css">
+    <link href="../static/css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#" data-toggle="modal" data-target="#myModal">Agregar fotos</a>
+                        <li role="presentation" class="active"><a href="/logout">Salir</a>
+                        </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">La Porra ITQ</h3>
+        </div>
+
+        <div class="jumbotron">
+            <h3>{{error}}</h3>
+
+        </div>
+        <!-- <div id="modal-output">
+
+        </div>-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Subir fotos</h4>
+                    </div>
+                    <form action="/_upload" method="post" enctype="multipart/form-data"> <!--  action="/upload" method="post"  method="post" action="{{ url_for('upload') }}" enctype = "multipart/form-data"-->
+                      <div class="modal-body">
+                          <div class="input-group">
+                              <span class="input-group-btn">
+                            <button id="fake-file-button-browse" type="button" class="btn btn-default">
+                              <span class="glyphicon glyphicon-file"></span>
+                              </button>
+                              </span>
+                              <input type="file" id="files-input-upload" multiple="" name="file[]" style="display:none">
+                              <input type="text" id="fake-file-input-name" disabled="disabled" placeholder="Ningun archivo ha sido seleccionado" class="form-control">
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default">Cerrar</button>
+                          <button type="submit" id="submitPictures" class="btn btn-primary">Subir Fotos</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; Diana Sanabria Nieto</p>
+        </footer>
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../static/js/bootstrap.fd.js"></script>
+
+<script type="text/javascript">
+  var names = [];
+  var base64Images = [];
+  var typesImg = [];
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+  // Fake file upload
+  document.getElementById('fake-file-button-browse').addEventListener('click', function() {
+  	document.getElementById('files-input-upload').click(); //clicks the hidden file button
+  });
+
+  document.getElementById('files-input-upload').addEventListener('change', function() {
+  	document.getElementById('fake-file-input-name').value = this.value; //when the file is selected that file route is shown to the user
+  	// document.getElementById('fake-file-button-upload').removeAttribute('disabled');
+  });
+
+</script>
+
+</html>
