@@ -37,3 +37,9 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.welcomeImg{
+  border-radius: 25px;
+  display: block;
+  margin: auto;
+  height: 180px;
+}
