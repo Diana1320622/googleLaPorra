@@ -5,10 +5,10 @@ from werkzeug import generate_password_hash, check_password_hash
 app = Flask(__name__)
 mysql = MySQL()
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'DianaDB'
+app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'a01320622'
 app.config['MYSQL_DATABASE_DB'] = 'LaPorra'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_HOST'] = 'ubuntu-512mb-nyc2-01'
 mysql.init_app(app)
 
 
